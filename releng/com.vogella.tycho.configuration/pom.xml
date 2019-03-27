@@ -57,6 +57,16 @@
         </artifact>
     </target>
     
+    <dependency-resolution>
+      <extraRequirements>
+       <requirement>
+        <type>eclipse-plugin</type>
+        <id>org.eclipse.equinox.event</id>
+        <versionRange>0.0.0</versionRange>
+       </requirement>
+          
+      </extraRequirements>
+    </dependency-resolution>
     
      <environments>
       <environment>
@@ -77,6 +87,59 @@
      </environments>
     </configuration>
    </plugin>
+   
+       		<!-- enable source feature generation -->
+            <plugin>
+                <groupId>org.eclipse.tycho.extras</groupId>
+                <artifactId>tycho-source-feature-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <executions>
+                    <execution>
+                        <id>source-feature</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>source-feature</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <excludes>
+                    <!-- provide plug-ins not containing any source code -->
+                    <plugin id="com.vogella.tycho.product" />
+                    <plugin id="com.vogella.tycho.target" />
+                    <plugin id="com.vogella.tycho.update" />
+                    <plugin id="com.vogella.tycho.update.source" />
+                    </excludes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-source-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <executions>
+                    <execution>
+                        <id>plugin-source</id>
+                        <goals>
+                            <goal>plugin-source</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+<!-- -->
+             <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-p2-plugin</artifactId>
+                <version>${tycho.version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-p2-metadata</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>p2-metadata</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+            </plugin>
   </plugins>
  </build>
 </project>

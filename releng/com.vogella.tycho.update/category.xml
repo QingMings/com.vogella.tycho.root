@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.vogella.tycho.feature_1.0.0.qualifier.jar" id="com.vogella.tycho.feature" version="1.0.0.qualifier">
-      <category name="tychoexample"/>
-   </feature>
-   <category-def name="tychoexample" label="Tycho example"/>
+	<feature
+		url="features/com.vogella.tycho.feature_1.0.0.qualifier.jar"
+		id="com.vogella.tycho.feature" version="1.0.0.qualifier">
+		<category name="tychoexample" />
+	</feature>
+<!-- 	<feature id="com.vogella.tycho.feature.source" version="1.0.0.qualifier"> -->
+<!-- 		<category name="tychoexample_source" /> -->
+<!-- 	</feature> -->
+	<category-def name="tychoexample" label="Tycho example" />
+<!-- 	<category-def name="tychoexample_source" -->
+<!-- 		label="Tycho example source bundles" /> -->
 </site>

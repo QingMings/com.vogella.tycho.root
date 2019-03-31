@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Plugin1
 Bundle-SymbolicName: com.vogella.tycho.plugin1;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-Vendor: VOGELLA
 Export-Package: com.vogella.tycho.plugin1,
  com.vogella.tycho.plugin1.addons

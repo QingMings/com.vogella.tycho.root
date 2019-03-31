@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Hellomenu
 Bundle-SymbolicName: com.vogella.tycho.hellomenu;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-Vendor: VOGELLA
 Require-Bundle: javax.inject,
  org.eclipse.osgi,

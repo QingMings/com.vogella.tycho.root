@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tests
 Bundle-SymbolicName: com.vogella.tycho.plugin1.tests
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-Vendor: VOGELLA
 Fragment-Host: com.vogella.tycho.plugin1;bundle-version="1.0.0"
 Automatic-Module-Name: com.vogella.tycho.plugin1.tests

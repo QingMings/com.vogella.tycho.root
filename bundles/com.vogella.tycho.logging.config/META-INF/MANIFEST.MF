@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Config
 Bundle-SymbolicName: com.vogella.tycho.logging.config
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: com.vogella.tycho.logging.config.Activator
 Bundle-Vendor: VOGELLA
 Require-Bundle: org.eclipse.core.runtime,

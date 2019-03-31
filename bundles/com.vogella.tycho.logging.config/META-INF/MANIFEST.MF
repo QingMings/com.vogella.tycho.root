@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Config
+Bundle-SymbolicName: com.vogella.tycho.logging.config
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.vogella.tycho.logging.config.Activator
+Bundle-Vendor: VOGELLA
+Require-Bundle: org.eclipse.core.runtime,
+ ch.qos.logback.classic,
+ ch.qos.logback.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.vogella.tycho.logging.config
+Bundle-ActivationPolicy: lazy
+Import-Package: org.slf4j;version="1.7.2",
+ org.slf4j.spi;version="1.7.2"
+Export-Package: com.vogella.tycho.logging.config

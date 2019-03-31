@@ -1,145 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
- <modelVersion>4.0.0</modelVersion>
- <groupId>com.vogella.tycho</groupId>
- <artifactId>com.vogella.tycho.configuration</artifactId>
- <version>1.0.0-SNAPSHOT</version>
- <packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.vogella.tycho</groupId>
+	<artifactId>com.vogella.tycho.configuration</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
- <properties>
-  <tycho.version>1.3.0</tycho.version>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <eclipse-repo.url>http://download.eclipse.org/releases/2018-12</eclipse-repo.url>
- </properties>
-<!--  使用 target 代替 repo -->
-<!--  <repositories> -->
-<!--   <repository> -->
-<!--    <id>eclipse-release</id> -->
-<!--    <url>${eclipse-repo.url}</url> -->
-<!--    <layout>p2</layout> -->
-<!--   </repository> -->
+	<properties>
+		
+		<tycho.version>1.3.0</tycho.version>
+		<tycho.extras.version>${tycho.version}</tycho.extras.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<eclipse-repo.url>http://download.eclipse.org/releases/2018-12</eclipse-repo.url>
+	</properties>
+	<!-- 使用 target 代替 repo -->
+	<!-- <repositories> -->
+	<!-- <repository> -->
+	<!-- <id>eclipse-release</id> -->
+	<!-- <url>${eclipse-repo.url}</url> -->
+	<!-- <layout>p2</layout> -->
+	<!-- </repository> -->
 
-<!--  </repositories> -->
+	<!-- </repositories> -->
+	<!-- 使用 target 代替 repo -->
+	<!-- <repositories> -->
+	<!-- <repository> -->
+	<!-- <id>eclipse-release</id> -->
+	<!-- <url>http://download.eclipse.org/eclipse/updates/4.11</url> -->
+	<!-- <layout>p2</layout> -->
+	<!-- </repository> -->
 
- <build>
-  <plugins>
-   <plugin>
-    <groupId>org.eclipse.tycho</groupId>
-    <artifactId>tycho-maven-plugin</artifactId>
-    <version>${tycho.version}</version>
-    <extensions>true</extensions>
-   </plugin>
-   <!--Enable the replacement of the SNAPSHOT version in the final product configuration-->
-   <plugin>
-        <groupId>org.eclipse.tycho</groupId>
-            <artifactId>tycho-packaging-plugin</artifactId>
-             <version>${tycho.version}</version>
-             <executions>
-              <execution>
-                <phase>package</phase>
-                <id>package-feature</id>
-                    <configuration>
-                        <finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
-                    </configuration>
-            </execution>
-        </executions>
-    </plugin>
-    <plugin>
-    <groupId>org.eclipse.tycho</groupId>
-    <artifactId>target-platform-configuration</artifactId>
-    <version>${tycho.version}</version>
-    <configuration>
-      <target> 
-        <artifact>
-            <groupId>com.vogella.tycho</groupId>
-            <artifactId>com.vogella.tycho.target</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </artifact>
-    </target>
-    
-    <dependency-resolution>
-      <extraRequirements>
-       <requirement>
-        <type>eclipse-plugin</type>
-        <id>org.eclipse.equinox.event</id>
-        <versionRange>0.0.0</versionRange>
-       </requirement>
-          
-      </extraRequirements>
-    </dependency-resolution>
-    
-     <environments>
-      <environment>
-       <os>linux</os>
-       <ws>gtk</ws>
-       <arch>x86_64</arch>
-      </environment>
-      <environment>
-       <os>win32</os>
-       <ws>win32</ws>
-       <arch>x86_64</arch>
-      </environment>
-      <environment>
-       <os>macosx</os>
-       <ws>cocoa</ws>
-       <arch>x86_64</arch>
-      </environment>
-     </environments>
-    </configuration>
-   </plugin>
-   
-       		<!-- enable source feature generation -->
-            <plugin>
-                <groupId>org.eclipse.tycho.extras</groupId>
-                <artifactId>tycho-source-feature-plugin</artifactId>
-                <version>${tycho.version}</version>
-                <executions>
-                    <execution>
-                        <id>source-feature</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>source-feature</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <excludes>
-                    <!-- provide plug-ins not containing any source code -->
-                    <plugin id="com.vogella.tycho.product" />
-                    <plugin id="com.vogella.tycho.target" />
-                    <plugin id="com.vogella.tycho.update" />
-                    <plugin id="com.vogella.tycho.update.source" />
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.eclipse.tycho</groupId>
-                <artifactId>tycho-source-plugin</artifactId>
-                <version>${tycho.version}</version>
-                <executions>
-                    <execution>
-                        <id>plugin-source</id>
-                        <goals>
-                            <goal>plugin-source</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-<!-- -->
-             <plugin>
-                <groupId>org.eclipse.tycho</groupId>
-                <artifactId>tycho-p2-plugin</artifactId>
-                <version>${tycho.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-p2-metadata</id>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>p2-metadata</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-            </plugin>
-  </plugins>
- </build>
+	<!-- </repositories> -->
+<!-- 	<distributionManagement> -->
+<!-- 		<repository> -->
+<!-- 			<id>ftp-repository</id> -->
+<!-- 			<url>ftp://192.168.40.151/pub</url> -->
+<!-- 		</repository> -->
+<!-- 	</distributionManagement> -->
+
+	<build>
+<!-- 		<extensions> -->
+		<!-- Enabling the use of FTP --> 
+<!-- 			<extension> -->
+<!-- 				<groupId>org.apache.maven.wagon</groupId> -->
+<!-- 				<artifactId>wagon-ftp</artifactId> -->
+<!-- 				<version>1.0-beta-6</version> -->
+<!-- 			</extension> -->
+<!-- 		</extensions> -->
+		<plugins>
+		
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<!--Enable the replacement of the SNAPSHOT version in the final product 
+				configuration -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<id>package-feature</id>
+						<configuration>
+							<finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<target>
+						<artifact>
+							<groupId>com.vogella.tycho</groupId>
+							<artifactId>com.vogella.tycho.target</artifactId>
+							<version>1.0.0-SNAPSHOT</version>
+						</artifact>
+					</target>
+
+					<dependency-resolution>
+						<extraRequirements>
+							<requirement>
+								<type>eclipse-plugin</type>
+								<id>org.eclipse.equinox.event</id>
+								<versionRange>0.0.0</versionRange>
+							</requirement>
+
+						</extraRequirements>
+					</dependency-resolution>
+
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+
+			<!-- enable source feature generation -->
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-source-feature-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>source-feature</id>
+						<phase>package</phase>
+						<goals>
+							<goal>source-feature</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<excludes>
+						<!-- provide plug-ins not containing any source code -->
+						<plugin id="com.vogella.tycho.product" />
+						<plugin id="com.vogella.tycho.target" />
+						<plugin id="com.vogella.tycho.update" />
+						<plugin id="com.vogella.tycho.update.source" />
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>attach-p2-metadata</id>
+						<phase>package</phase>
+						<goals>
+							<goal>p2-metadata</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- <plugin> -->
+			<!-- <groupId>org.eclipse.tycho.extras</groupId> -->
+			<!-- <artifactId>tycho-p2-extras-plugin</artifactId> -->
+			<!-- <version>${tycho.version}</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <phase>prepare-package</phase> -->
+			<!-- <goals> -->
+			<!-- <goal>mirror</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- <configuration> -->
+			<!-- <source> -->
+			<!-- <repository> -->
+			<!-- <url>http://download.eclipse.org/eclipse/updates/4.11</url> -->
+			<!-- <layout>p2</layout> -->
+			<!-- </repository> -->
+			<!-- </source> -->
+			<!-- <destination>${project.build.directory}/repository</destination> -->
+			<!-- <compress>true</compress> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
+		</plugins>
+	</build>
 </project>

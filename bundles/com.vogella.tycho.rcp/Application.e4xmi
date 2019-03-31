@@ -1,16 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.window.main" label="Empty E4 Application" width="500" height="400">
-    <mainMenu xmi:id="_dzzuME-EEemIorYQFBTwFg" elementId="com.vogella.tycho.rcp.menu.0">
-      <children xsi:type="menu:Menu" xmi:id="_ep2lYE-EEemIorYQFBTwFg" elementId="com.vogella.tycho.rcp.menu.file" label="File">
-        <children xsi:type="menu:HandledMenuItem" xmi:id="_i2yf4E-EEemIorYQFBTwFg" elementId="com.vogella.tycho.rcp.handledmenuitem.save" label="Save"/>
+<application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_c3AF0MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.application" bindingContexts="_c3AF2cjYEeSyMNYR5xypkQ">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_c3AF0cjYEeSyMNYR5xypkQ" elementId="com.vogella.tycho.rcp.window.main" label="Empty E4 Application" iconURI="platform:/plugin/com.vogella.tycho.rcp/icons/app/IMG_3227.png" width="500" height="400">
+    <children xsi:type="advanced:PerspectiveStack" xmi:id="_96gU8FHhEem6eIwhngOE5Q" elementId="org.eclipse.ui.ide.perspectivestack">
+      <children xsi:type="advanced:Perspective" xmi:id="_ARDVkFHiEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.perspective.sample">
+        <children xsi:type="basic:PartSashContainer" xmi:id="_EW3UYFHiEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.partsashcontainer.sample">
+          <children xsi:type="basic:PartStack" xmi:id="_GsQecFHiEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.partstack.sample">
+            <children xsi:type="basic:Part" xmi:id="_JwfrgFHiEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.part.sample" contributionURI="bundleclass://com.vogella.tycho.rcp/com.vogella.tycho.rcp.parts.SamplePart" label="Sample Part"/>
+          </children>
+        </children>
+      </children>
+    </children>
+    <mainMenu xmi:id="_dzzuME-EEemIorYQFBTwFg" elementId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_ep2lYE-EEemIorYQFBTwFg" elementId="file" label="File">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_i2yf4E-EEemIorYQFBTwFg" elementId="com.vogella.tycho.rcp.handledmenuitem.save" label="Save" command="_hbnu8FHgEem6eIwhngOE5Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_jCnFcFHhEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handleditem.file.open" label="Open" command="_j5ii4FHgEem6eIwhngOE5Q"/>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_op4P8FHhEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handleditem.quit" label="Quit" command="_l3SB8FHgEem6eIwhngOE5Q"/>
+      </children>
+      <children xsi:type="menu:Menu" xmi:id="_16WAcFHhEem6eIwhngOE5Q" elementId="help" label="Help">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_4HDIkFHhEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handleditem.about" label="About" command="_dvai8FHgEem6eIwhngOE5Q"/>
       </children>
     </mainMenu>
+    <trimBars xmi:id="_bKku8FKhEemHusJdnLE0LQ" elementId="com.vogella.tycho.rcp.trimbar">
+      <children xsi:type="menu:ToolBar" xmi:id="_bgnQYFKhEemHusJdnLE0LQ" elementId="org.eclipse.ui.main.toolbar">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_cL4a8FKhEemHusJdnLE0LQ" elementId="com.vogella.tycho.rcp.handleditem.trimbar.top.open" iconURI="platform:/plugin/com.vogella.tycho.rcp/icons/open_in_app.png" command="_j5ii4FHgEem6eIwhngOE5Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_dYU_8FKhEemHusJdnLE0LQ" elementId="com.vogella.tycho.rcp.handleditem.trimbar.top.save" iconURI="platform:/plugin/com.vogella.tycho.rcp/icons/save_edit.png" command="_hbnu8FHgEem6eIwhngOE5Q"/>
+      </children>
+    </trimBars>
   </children>
+  <handlers xmi:id="_y9-ycFHgEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handler.quitCommand" contributionURI="bundleclass://com.vogella.tycho.rcp/com.vogella.tycho.rcp.handlers.QuitHandler" command="_l3SB8FHgEem6eIwhngOE5Q"/>
+  <handlers xmi:id="_D_w4cFHhEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handler.openCommand" contributionURI="bundleclass://com.vogella.tycho.rcp/com.vogella.tycho.rcp.handlers.OpenHandler" command="_j5ii4FHgEem6eIwhngOE5Q"/>
+  <handlers xmi:id="_ILob8FHhEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handler.saveCommand" contributionURI="bundleclass://com.vogella.tycho.rcp/com.vogella.tycho.rcp.handlers.SaveHandler" command="_hbnu8FHgEem6eIwhngOE5Q"/>
+  <handlers xmi:id="_L2Y2cFHhEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.handler.aboutCommand" contributionURI="bundleclass://com.vogella.tycho.rcp/com.vogella.tycho.rcp.handlers.AboutHandler" command="_dvai8FHgEem6eIwhngOE5Q"/>
+  <bindingTables xmi:id="_MX3BQFHgEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.bindingtable" bindingContext="_c3AF2cjYEeSyMNYR5xypkQ">
+    <bindings xmi:id="_Rs1h4FHgEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.keybinding.m1q" keySequence="M1+Q" command="_l3SB8FHgEem6eIwhngOE5Q"/>
+    <bindings xmi:id="_puKz8FHgEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.keybinding.m1o" keySequence="M1+O" command="_j5ii4FHgEem6eIwhngOE5Q"/>
+    <bindings xmi:id="_tmqIcFHgEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.keybinding.m1s" keySequence="M1+S" command="_hbnu8FHgEem6eIwhngOE5Q"/>
+    <bindings xmi:id="_wWH_YFHgEem6eIwhngOE5Q" elementId="com.vogella.tycho.rcp.keybinding.m1a" keySequence="M1+A" command="_dvai8FHgEem6eIwhngOE5Q"/>
+  </bindingTables>
   <rootContext xmi:id="_c3AF2cjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialogAndWindow" name="In Dialog and Windows">
     <children xmi:id="_c3AF2sjYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.window" name="In Windows"/>
     <children xmi:id="_c3AF28jYEeSyMNYR5xypkQ" elementId="org.eclipse.ui.contexts.dialog" name="In Dialogs"/>
   </rootContext>
+  <commands xmi:id="_dvai8FHgEem6eIwhngOE5Q" elementId="org.eclipse.ui.help.aboutAction" commandName="aboutCommand"/>
+  <commands xmi:id="_hbnu8FHgEem6eIwhngOE5Q" elementId="org.eclipse.ui.file.save" commandName="saveCommand"/>
+  <commands xmi:id="_j5ii4FHgEem6eIwhngOE5Q" elementId="org.eclipse.ui.file.open" commandName="openCommand"/>
+  <commands xmi:id="_l3SB8FHgEem6eIwhngOE5Q" elementId="org.eclipse.ui.file.exit" commandName="quitCommand"/>
   <addons xmi:id="_c3AF0sjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.core.commands.service" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_c3AF08jYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.contexts.service" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_c3AF1MjYEeSyMNYR5xypkQ" elementId="org.eclipse.e4.ui.bindings.service" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>

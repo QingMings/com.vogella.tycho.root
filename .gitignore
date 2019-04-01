@@ -1,6 +1,6 @@
 .DS_Store
 */.DS_Store
 */.polyglot.build.properties.releaseBackup
-*/target/
+**/target/
 /pom.xml.releaseBackup
 /release.properties

@@ -79,7 +79,8 @@
 					<target>
 						<artifact>
 							<groupId>com.vogella.tycho</groupId>
-							<artifactId>com.vogella.tycho.target</artifactId>
+<!-- 							<artifactId>com.vogella.tycho.target</artifactId> -->
+							<artifactId>com.vogella.tycho.online.target</artifactId>
 							<version>1.0.2-SNAPSHOT</version>
 						</artifact>
 					</target>

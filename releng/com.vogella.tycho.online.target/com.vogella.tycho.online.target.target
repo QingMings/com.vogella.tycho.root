@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?pde version="3.8"?><target name="com.vogella.tycho.target">
+	<locations>
+		<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<repository location="http://download.eclipse.org/eclipse/updates/4.11"/> 
+			<!-- <repository location="file:///D:/ide/Eclipse/p2_mirror/eclipse_4.11"/>-->
+			<unit id="org.eclipse.sdk.ide" version="4.11.0.I20190307-0500"/>
+			<unit id="org.eclipse.equinox.sdk.feature.group" version="3.17.0.v20190305-2225"/>
+			
+
+
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.hamcrest" version="1.1.0.v20090501071000"/>
+			<unit id="org.hamcrest.text" version="1.1.0.v20090501071000"/>
+			<unit id="org.junit" version="4.12.0.v201504281640"/>
+			<unit id="org.junit.source" version="4.12.0.v201504281640"/>
+			<unit id="org.mockito" version="1.9.5.v201605172210"/>
+			<unit id="org.mockito.source" version="1.9.5.v201605172210"/>
+			<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20190226160451/repository"/>
+			<!--<repository location="file:///D:/ide/Eclipse/p2_mirror/orbit"/> -->
+			<unit id="ch.qos.logback.slf4j" version="1.0.7.v201505121915"/>
+			<unit id="ch.qos.logback.slf4j.source" version="1.0.7.v201505121915"/>
+			<unit id="org.slf4j.api" version="1.7.2.v20121108-1250"/>
+			<unit id="org.slf4j.api.source" version="1.7.2.v20121108-1250"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
+			<unit id="org.eclipse.swtbot.eclipse.test.junit.feature.group" version="2.7.0.201806111355"/>
+			<unit id="org.eclipse.swtbot.feature.group" version="2.7.0.201806111355"/>
+		 <repository location="http://download.eclipse.org/technology/swtbot/releases/latest/"/>
+				<!--<repository location="file:///D:/ide/Eclipse/p2_mirror/swtbot"/> -->
+		</location>
+
+	</locations>
+</target>

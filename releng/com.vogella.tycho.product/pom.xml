@@ -4,13 +4,13 @@
  <parent>
   <groupId>com.vogella.tycho</groupId>
   <artifactId>com.vogella.tycho.releng</artifactId>
-  <version>1.0.1-SNAPSHOT</version>
+  <version>1.0.2-SNAPSHOT</version>
  </parent>
 
     <groupId>com.vogella.tycho</groupId>
  <artifactId>com.vogella.tycho.product</artifactId>
  <packaging>eclipse-repository</packaging>
- <version>1.0.1-SNAPSHOT</version>
+ <version>1.0.2-SNAPSHOT</version>
 
  <build>
   <plugins>

@@ -42,7 +42,7 @@
  	      </goals>
  	      <configuration>
  	        <includes>**/META-INF/MANIFEST.MF,**/feature.xml,**/*.product,**/category.xml</includes>
- 	        <excludes>**/target/**</excludes>
+ 	        <excludes>**/target/**,**/.polyglot.build.properties</excludes>
  	      <message>Changing the version to reflect the pom versions for the release</message>
  	      </configuration>
  	    </execution>

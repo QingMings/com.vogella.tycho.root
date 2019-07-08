@@ -21,7 +21,7 @@
   - sleep 10 # give metacity some time to start
  script:        
   - mvn clean verify  
-  - export FOO=$(ls ls  releng/com.vogella.tycho.product/target/products/*.zip)
+  - export FOO=$(ls releng/com.vogella.tycho.product/target/products/*.zip)
  deploy:
   provider: releases
   api_key:

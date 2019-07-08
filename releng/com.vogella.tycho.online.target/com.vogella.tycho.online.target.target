@@ -26,7 +26,7 @@
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 			<unit id="org.eclipse.swtbot.eclipse.test.junit.feature.group" version="2.7.0.201806111355"/>
 			<unit id="org.eclipse.swtbot.feature.group" version="2.7.0.201806111355"/>
-		 <repository location="http://download.eclipse.org/technology/swtbot/releases/latest/"/>
+		 <repository location="http://download.eclipse.org/technology/swtbot/releases/2.7.0/"/>
 				<!--<repository location="file:///D:/ide/Eclipse/p2_mirror/swtbot"/> -->
 		</location>
 

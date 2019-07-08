@@ -22,7 +22,7 @@
  script:        
   - mvn clean verify  
   - export FOO=$(ls ls  releng/com.vogella.tycho.product/target/products/*.zip)
-  deploy:
+ deploy:
   provider: releases
   api_key:
     secure: 80700618e907e1688958320c2aa3715497876cf6

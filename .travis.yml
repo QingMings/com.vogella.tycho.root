@@ -26,4 +26,5 @@
   provider: releases
   api_key:
     secure: 80700618e907e1688958320c2aa3715497876cf6
-  file: "${FOO}"
+  file_glob: true
+  file: releng/com.vogella.tycho.product/target/products/*.zip

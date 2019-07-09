@@ -6,8 +6,6 @@
  env:  
   global:  
    - DISPLAY=:99.0  
-   - GH_REF: github.com/QingMings/com.vogella.tycho.root.git
-   - secure: "eb2oR5CnclWKAGe9GjdKRl7ymXXcSX+62cGifJp3tg/Yc8LKyxZ9668bHwYBfzG04jebfuYtxp+eckfSwbw9TsRypDQFnH7YQ4Siz53V5UmESPA2DgRJUlkmEBej+v8tL6LXqa1y6WE2Iv1uSXZQFS49TdRY115Q6oxqdbv/XujdTX2LR5Azgh0lSf9QpPdZzbiSAl8HwTMmDnNxfVl6FBNa3jjGdfPlXUhZ5ELPfHr3+v9ZRhiGqgU8pDz9+q1I3bqdAb0rBkzxGMM/s1HVKx69l0HRxTJf8WKeVclwk6ZeEE5coKtOxDbYFLR2+qG6p8djy/FyEB8y0z3NmNLxRQDKeD7RymcXPdCSFXCj5+Fo45zOQeoEybJ32FJ6OQtqMig8RxFW/SRjFnkRlVoOCdYaySA3Z0OwOIl/1gfCM3fBI93693YVGQktBK5kkHxN02d67mCl8M4V2h6mmcBSmgUNpiH8V19Qf9uO6mrypu3Q4MnHmWSS9tf71xBMA0BHx9ypUYdKkrUzHCvtcynM7A8HoNI1y0zTPH+LTpoE5/i29X03Z8YNDKE0HZvsIC+XF3folJoOmZXg763Gr6qHDCPc5rjDtBBWmhp4whKvSCgbGg5shzvsJBxFnPkTvwjlY6PdZRx/ymmRuGnqQ6++6zowsNfiKi5zXty/yKlloI0="
  install: true
    
  before_install:  
@@ -26,6 +24,6 @@
  deploy:
   provider: releases
   api_key:
-    secure: "o2lj6wrUipBfjxm63f1DAia3+Aio3rNX3q4InyVeEx+MHExF1r4r4uJv2bEYdTvRVh11G3uG3C4arq4v4qjTLEmWi5/lAtNZX8IVrXG3Ti+tvUiELW22x196PLvR5SvQpdXWDZMHgjBEGc/RYNVuAtuWo3HxXpcbvqE4zXNuIVxfbyAQVtZTbi/e4uMoyeM7J1Q51onJaEpsEohgvNfJWlP5C2YAlwAm+ojeNWm0d8ND+rwpTczWX7UxkjOWO7SKAdIaMCkMtXr4VvghsueNpi5keDP4EGazUCuzh8mOS7h5YtSZD3JHWXR/TY3Et6dLg8t4jlO2gCEVaJMJbUlmFZxGj7KxgSFCheZZq9vvtBbOgPOPn67YHS344aygiNGq6UiQKtBM44c2YQ4pZg/b5J8p4ecCBrJJmTX5vIe2SUTXPgsqRJa3/s4O7AslGX9cCGFSmDmDaGvkR4oPkq3ip8JhmEqBblYoJRa6EZTcRG6G1uPTrKP4jTlZUgGx9egDV0mrB4mVP9h0Q0Mku6B2nwbGuQ+d7VsKjRF1G8J4oZGBVCVSiJZ3QBfkX9eDDnwuHzrSOVpgLyEwBrjBVv1nauySU3VDd9oXcKw1Nhkk4i2EjtK+sGFihLO9HF851+OFMturC0fcroQa0RmkH8JvrdPaikYp+A3SSl4wExeGYKo="
+    secure: ${GH_TOKEN}
   file_glob: true
   file: releng/com.vogella.tycho.product/target/products/*.zip
